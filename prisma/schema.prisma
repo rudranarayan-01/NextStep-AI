@@ -65,7 +65,7 @@ model CoverLetter {
   status          String    @default("draft") // draft, completed
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
-
+ 
   @@index([userId])
 }
 
