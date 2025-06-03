@@ -34,7 +34,7 @@ const Header = () => {
             alt="NEXTSTEP-AI"
             width={200}
             height={60}
-            className="h-12 py-1 w-auto object-contain "
+            className="h-12 py-1 w-auto object-contain cursor-pointer "
           />
         </Link>
         <div className="flex items-center space-x-2 md:space-x-4">
@@ -42,7 +42,7 @@ const Header = () => {
             <Link href={"/dashboard"}>
               <Button variant="outline">
                 <LayoutDashboard className="h-4 w-4" />
-                <span className="hidden md:block">Industry Insights</span>
+                <span className="hidden md:block cursor-pointer">Industry Insights</span>
               </Button>
             </Link>
 
@@ -50,7 +50,7 @@ const Header = () => {
               <DropdownMenuTrigger>
                 <Button>
                   <StarsIcon className="h-4 w-4" />
-                  <span className="hidden md:block">Growth tools</span>
+                  <span className="hidden md:block cursor-pointer">Growth tools</span>
                   <ChevronDown className="h-4 w-4" />
                 </Button>
               </DropdownMenuTrigger>
@@ -58,7 +58,7 @@ const Header = () => {
                 <DropdownMenuItem>
                   <Link href={"/resume"} className="flex items-center gap-2">
                     <FileText className="h-4 w-4" />
-                    <span className="hidden md:block">Build Resume</span>
+                    <span className="hidden md:block cursor-pointer">Build Resume</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
@@ -67,13 +67,13 @@ const Header = () => {
                     className="flex items-center gap-2"
                   >
                     <PenBox className="h-4 w-4" />
-                    <span className="hidden md:block">Cover Letter</span>
+                    <span className="hidden md:block cursor-pointer">Cover Letter</span>
                   </Link>
                 </DropdownMenuItem>
                 <DropdownMenuItem>
                   <Link href={"/interview"} className="flex items-center gap-2">
                     <GraduationCap className="h-4 w-4" />
-                    <span className="hidden md:block">
+                    <span className="hidden md:block cursor-pointer">
                       Interview Preparation
                     </span>
                   </Link>
