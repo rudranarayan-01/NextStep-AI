@@ -3,40 +3,61 @@
 import { db } from "@/lib/prisma";
 import { auth } from "@clerk/nextjs/server";
 import { GoogleGenerativeAI } from "@google/generative-ai";
+import { revalidatePath } from "next/cache";
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
-export const generateAIInsights = async (industry) => {
-  const prompt = `
-          Analyze the current state of the ${industry} industry and provide insights in ONLY the following JSON format without any additional notes or explanations:
-          {
-            "salaryRanges": [
-              { "role": "string", "min": number, "max": number, "median": number, "location": "string" }
-            ],
-            "growthRate": number,
-            "demandLevel": "High" | "Medium" | "Low",
-            "topSkills": ["skill1", "skill2"],
-            "marketOutlook": "Positive" | "Neutral" | "Negative",
-            "keyTrends": ["trend1", "trend2"],
-            "recommendedSkills": ["skill1", "skill2"]
-          }
-          
-          IMPORTANT: Return ONLY the JSON. No additional text, notes, or markdown formatting.
-          Include at least 5 common roles for salary ranges.
-          Growth rate should be a percentage.
-          Include at least 5 skills and trends.
-        `;
+export async function saveResume(content) {
+  const { userId } = await auth();
+  if (!userId) throw new Error("Unauthorized");
 
-  const result = await model.generateContent(prompt);
-  const response = result.response;
-  const text = response.text();
-  const cleanedText = text.replace(/```(?:json)?\n?/g, "").trim();
+  const user = await db.user.findUnique({
+    where: { clerkUserId: userId },
+  });
 
-  return JSON.parse(cleanedText);
-};
+  if (!user) throw new Error("User not found");
 
-export async function getIndustryInsights() {
+  try {
+    const resume = await db.resume.upsert({
+      where: {
+        userId: user.id,
+      },
+      update: {
+        content,
+      },
+      create: {
+        userId: user.id,
+        content,
+      },
+    });
+
+    revalidatePath("/resume");
+    return resume;
+  } catch (error) {
+    console.error("Error saving resume:", error);
+    throw new Error("Failed to save resume");
+  }
+}
+
+export async function getResume() {
+  const { userId } = await auth();
+  if (!userId) throw new Error("Unauthorized");
+
+  const user = await db.user.findUnique({
+    where: { clerkUserId: userId },
+  });
+
+  if (!user) throw new Error("User not found");
+
+  return await db.resume.findUnique({
+    where: {
+      userId: user.id,
+    },
+  });
+}
+
+export async function improveWithAI({ current, type }) {
   const { userId } = await auth();
   if (!userId) throw new Error("Unauthorized");
 
@@ -49,20 +70,29 @@ export async function getIndustryInsights() {
 
   if (!user) throw new Error("User not found");
 
-  // If no insights exist, generate them
-  if (!user.industryInsight) {
-    const insights = await generateAIInsights(user.industry);
+  const prompt = `
+    As an expert resume writer, improve the following ${type} description for a ${user.industry} professional.
+    Make it more impactful, quantifiable, and aligned with industry standards.
+    Current content: "${current}"
 
-    const industryInsight = await db.industryInsight.create({
-      data: {
-        industry: user.industry,
-        ...insights,
-        nextUpdate: new Date(Date.now() + 7 * 24 * 60 * 60 * 1000),
-      },
-    });
+    Requirements:
+    1. Use action verbs
+    2. Include metrics and results where possible
+    3. Highlight relevant technical skills
+    4. Keep it concise but detailed
+    5. Focus on achievements over responsibilities
+    6. Use industry-specific keywords
+    
+    Format the response as a single paragraph without any additional text or explanations.
+  `;
 
-    return industryInsight;
+  try {
+    const result = await model.generateContent(prompt);
+    const response = result.response;
+    const improvedContent = response.text().trim();
+    return improvedContent;
+  } catch (error) {
+    console.error("Error improving content:", error);
+    throw new Error("Failed to improve content");
   }
-
-  return user.industryInsight;
 }

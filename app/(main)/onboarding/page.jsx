@@ -11,5 +11,9 @@ export default async function OnboardingPage() {
     redirect("/dashboard");
   }
 
-  return <main><OnboardingForm industries={industries} /></main>
+  return (
+    <main>
+      <OnboardingForm industries={industries} />
+    </main>
+  );
 }
