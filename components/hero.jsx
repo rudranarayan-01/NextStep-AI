@@ -41,11 +41,13 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="flex justify-center space-x-4">
-          <Link href="/dashboard">
+          <div>
+            <Link href="/dashboard">
             <Button size="lg" className="px-8">
               Get Started
             </Button>
           </Link>
+          </div>
           <Link href="https://ai-inter.netlify.app/">
             <Button size="lg" variant="outline" className="px-8">
               AI Interview
