@@ -85,13 +85,13 @@ const Footer = () => {
             >
               <Facebook className="h-5 w-5" />
             </a>
-            <a
+            <Link
               href="#"
               aria-label="Twitter"
               className="hover:text-gray-400 transition"
             >
               <Twitter className="h-5 w-5" />
-            </a>
+            </Link>
             <a
               href="#"
               aria-label="LinkedIn"
@@ -99,16 +99,25 @@ const Footer = () => {
             >
               <Linkedin className="h-5 w-5" />
             </a>
-            <a
-              href="#"
+            <Link
+              href="mailto:rudranarayansahu.tech@gmail.com"
               aria-label="Email"
               className="hover:text-gray-400 transition"
             >
               <Mail className="h-5 w-5" />
-            </a>
+            </Link>
           </div>
           <div className="container py-3 mx-auto text-center text-gray-200">
-            <p>Made with love by <Link target="_blank" className="text-blue-300" href={"https://akash0101.pythonanywhere.com/"}>Rudranarayan Sahu</Link></p>
+            <p>
+              Made with love by{" "}
+              <Link
+                target="_blank"
+                className="text-blue-300"
+                href={"https://akash0101.pythonanywhere.com/"}
+              >
+                Rudranarayan Sahu
+              </Link>
+            </p>
           </div>
         </div>
       </div>
