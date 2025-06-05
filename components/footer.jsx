@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Branding */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">AI Career Coach</h2>
+          <h2 className="text-2xl font-bold mb-4 bg-white text-black text-center">Nextstep-AI</h2>
           <p className="text-gray-400 text-sm">
             Empowering your next move with AI-driven career guidance.
           </p>
@@ -134,7 +134,7 @@ const Footer = () => {
       </div>
 
       {/* Footer Bottom */}
-      <div className="mt-12 border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+      <div className="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
         © {new Date().getFullYear()} Nextstep-AI. All rights reserved.
       </div>
     </motion.footer>
