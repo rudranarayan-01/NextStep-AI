@@ -119,7 +119,10 @@ const Footer = () => {
               </Link>
             </p>
             <div>
-              <MapPin /> Bhubaneswar
+              <div className="flex py-3 gap-1">
+                <MapPin />
+                <p>Bhubaneswar</p>
+              </div>
             </div>
           </div>
         </div>
