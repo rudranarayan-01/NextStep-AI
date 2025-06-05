@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Facebook, Twitter, Linkedin, Mail } from "lucide-react";
+import { Twitter, Linkedin, Mail, Rss, MapPin } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -78,13 +78,13 @@ const Footer = () => {
         <div>
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
-            <a
+            <Link
               href="#"
               aria-label="Facebook"
               className="hover:text-gray-400 transition"
             >
-              <Facebook className="h-5 w-5" />
-            </a>
+              <Rss className="h-5 w-5" />
+            </Link>
             <Link
               href="#"
               aria-label="Twitter"
@@ -92,13 +92,13 @@ const Footer = () => {
             >
               <Twitter className="h-5 w-5" />
             </Link>
-            <a
+            <Link
               href="#"
               aria-label="LinkedIn"
               className="hover:text-gray-400 transition"
             >
               <Linkedin className="h-5 w-5" />
-            </a>
+            </Link>
             <Link
               href="mailto:rudranarayansahu.tech@gmail.com"
               aria-label="Email"
@@ -118,6 +118,9 @@ const Footer = () => {
                 Rudranarayan Sahu
               </Link>
             </p>
+            <div>
+              <MapPin /> Bhubaneswar
+            </div>
           </div>
         </div>
       </div>
