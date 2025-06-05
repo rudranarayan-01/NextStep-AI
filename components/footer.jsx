@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Twitter, Linkedin, Mail, Rss, MapPin, PhoneCall } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 
 const Footer = () => {
@@ -15,7 +16,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
         {/* Branding */}
         <div>
-          <h2 className="text-2xl font-bold mb-4 bg-white text-black text-center">Nextstep-AI</h2>
+          <h2 className="text-2xl font-bold mb-4 bg-white text-black text-center flex justify-center items-center">
+            {" "}
+            <Image
+              src="/favicon.png"
+              width={40}
+              height={40}
+              alt="Favicon"
+            />{" "}
+            Nextstep-AI
+          </h2>
           <p className="text-gray-400 text-sm">
             Empowering your next move with AI-driven career guidance.
           </p>
