@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Twitter, Linkedin, Mail, Rss, MapPin } from "lucide-react";
+import { Twitter, Linkedin, Mail, Rss, MapPin, PhoneCall } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -79,8 +79,8 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
             <Link
-              href="#"
-              aria-label="Facebook"
+              href="https://ai-inter.netlify.app/"
+              aria-label="Webite"
               className="hover:text-gray-400 transition"
             >
               <Rss className="h-5 w-5" />
@@ -93,7 +93,8 @@ const Footer = () => {
               <Twitter className="h-5 w-5" />
             </Link>
             <Link
-              href="#"
+              target="_blank"
+              href="https://www.linkedin.com/in/rudranarayan-sahu-b7b9a6244/"
               aria-label="LinkedIn"
               className="hover:text-gray-400 transition"
             >
@@ -118,8 +119,12 @@ const Footer = () => {
                 Rudranarayan Sahu
               </Link>
             </p>
-            <div>
-              <div className="flex py-3 gap-1">
+            <div className="flex flex-col py-3 ">
+              <div className="flex gap-1 py-2">
+                <PhoneCall />
+                <p>+91 8260348599</p>
+              </div>
+              <div className="flex py-2 gap-1">
                 <MapPin />
                 <p>Bhubaneswar</p>
               </div>
