@@ -118,7 +118,7 @@ const Footer = () => {
               <Mail className="h-5 w-5" />
             </Link>
           </div>
-          <div className="container py-3 mx-auto text-center text-gray-200">
+          <div className="container py-3 mx-auto text-gray-200">
             <p>
               Made with love by{" "}
               <Link

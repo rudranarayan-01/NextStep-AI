@@ -16,9 +16,9 @@ const HeroSection = () => {
       const scrollThreshold = 100;
 
       if (scrollPosition > scrollThreshold) {
-        imageElement.classList.add("scrolled");
+        imageElement?.classList.add("scrolled");
       } else {
-        imageElement.classList.remove("scrolled");
+        imageElement?.classList.remove("scrolled");
       }
     };
 
@@ -27,7 +27,7 @@ const HeroSection = () => {
   }, []);
 
   return (
-    <section className="w-full pt-36 md:pt-48 pb-10">
+    <section className="w-full pt-36 md:pt-48 pb-10 relative z-10">
       <div className="space-y-6 text-center">
         <div className="space-y-6 mx-auto">
           <h1 className="text-5xl font-bold md:text-6xl lg:text-7xl xl:text-8xl gradient-title animate-gradient">
@@ -40,22 +40,20 @@ const HeroSection = () => {
             AI-powered tools for job success.
           </p>
         </div>
-        <div className="flex justify-center space-x-4">
-          <div>
-            <Link href="/dashboard">
-            <Button size="lg" className="px-8">
-              Get Started
+        <div className="flex justify-center space-x-4 relative z-20">
+          <Link href="/dashboard" passHref>
+            <Button asChild size="lg" className="px-8">
+              <span>Get Started</span>
             </Button>
           </Link>
-          </div>
-          <Link href="https://ai-inter.netlify.app/">
-            <Button size="lg" variant="outline" className="px-8">
-              AI Interview
+          <Link href="https://ai-inter.netlify.app/" target="_blank" rel="noopener noreferrer" passHref>
+            <Button asChild size="lg" variant="outline" className="px-8">
+              <span>AI Interview</span>
             </Button>
           </Link>
         </div>
-        <div className="hero-image-wrapper mt-5 md:mt-0">
-          <div ref={imageRef} className="hero-image">
+        <div className="hero-image-wrapper mt-5 md:mt-0 relative z-0">
+          <div ref={imageRef} className="hero-image pointer-events-none">
             <Image
               src="/banner.jpeg"
               width={1280}
