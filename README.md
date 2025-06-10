@@ -62,3 +62,22 @@ DATABASE_URL =
 GEMINI_API_KEY = 
 
 ```
+
+### 4. Start the development server
+
+```bash
+npm run dev
+```
+
+### 📁 Project Structure
+
+![image](https://github.com/user-attachments/assets/51975705-a84a-462d-bd66-1d6676ca24e3)
+
+### 🚀 Deployment
+
+This application is optimized for Vercel:
+
+### 📸 Screenshots
+![Screenshot 2025-06-06 114610](https://github.com/user-attachments/assets/0e62b586-744c-483a-948c-2888a88541c0)![Screenshot 2025-06-06 184455](https://github.com/user-attachments/assets/bfc9036d-5a3a-43f9-b735-64b8d19a081e)
+
+
