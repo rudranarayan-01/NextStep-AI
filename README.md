@@ -40,8 +40,6 @@ cd NextStep-AI
 ```
 ### 2. Install dependencies
 ```bash
-Copy
-Edit
 npm install
 ```
 
