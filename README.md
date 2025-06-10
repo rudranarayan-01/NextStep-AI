@@ -37,9 +37,21 @@ A modern web platform that empowers job seekers with AI-driven tools to streamli
 git clone [https://github.com/your-username/ai-interview-platform.git](https://github.com/rudranarayan-01/NextStep-AI)
 cd NextStep-AI
 
-
+```
 ### 2. Install dependencies
 ```bash
 Copy
 Edit
 npm install
+```
+
+3. Configure environment variables
+Create a .env.local file in the root directory and add the following:
+
+```bash
+CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
+CLERK_SECRET_KEY=your_clerk_secret_key
+DATABASE_URL=your_neon_database_url
+NEXT_PUBLIC_INNGEST_API_KEY=your_inngest_api_key
+
+```
