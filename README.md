@@ -26,6 +26,7 @@ A modern web platform that empowers job seekers with AI-driven tools to streamli
 | **Clerk**        | Seamless authentication and session management   |
 | **Framer Motion**| Smooth UI animations and transitions             |
 | **TypeScript**   | Strong typing support for safer code             |
+| **Postgree**     | Storing the data                                 |
 
 ---
 
@@ -47,9 +48,17 @@ npm install
 Create a .env.local file in the root directory and add the following:
 
 ```bash
-CLERK_PUBLISHABLE_KEY=your_clerk_publishable_key
-CLERK_SECRET_KEY=your_clerk_secret_key
-DATABASE_URL=your_neon_database_url
-NEXT_PUBLIC_INNGEST_API_KEY=your_inngest_api_key
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=##################
+CLERK_SECRET_KEY=
+
+NEXT_PUBLIC_SIGNIN_URL = /sign-in
+NEXT_PUBLIC_SIGNUP_URL = /sign-up
+NEXT_PUBLIC_CLERK_AFTER_SIGNIN_URL = /onboarding
+NEXT_PUBLIC_CLERK_AFTER_SIGNUP_URL = /onboarding
+
+NEON_ROLE_PASSWORD = 
+DATABASE_URL = 
+
+GEMINI_API_KEY = 
 
 ```
