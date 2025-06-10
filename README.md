@@ -76,8 +76,13 @@ npm run dev
 ### 🚀 Deployment
 
 This application is optimized for Vercel:
+You can view thw live: https://next-step-ai-zeta.vercel.app/
 
 ### 📸 Screenshots
 ![Screenshot 2025-06-06 114610](https://github.com/user-attachments/assets/0e62b586-744c-483a-948c-2888a88541c0)![Screenshot 2025-06-06 184455](https://github.com/user-attachments/assets/bfc9036d-5a3a-43f9-b735-64b8d19a081e)
 
+
+
+🙌 Author
+Made with ❤️ by Rudranarayan Sahu
 
