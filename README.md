@@ -36,3 +36,10 @@ A modern web platform that empowers job seekers with AI-driven tools to streamli
 ```bash
 git clone [https://github.com/your-username/ai-interview-platform.git](https://github.com/rudranarayan-01/NextStep-AI)
 cd NextStep-AI
+
+
+### 2. Install dependencies
+```bash
+Copy
+Edit
+npm install
