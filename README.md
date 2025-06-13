@@ -8,7 +8,7 @@ A modern web platform that empowers job seekers with AI-driven tools to streamli
 
 - 🔐 **Secure Authentication** with Clerk
 - 📈 **Industry Insights with Trends** to stay updated
-- 📄 **AI-Powered Resume & Cover Letter Generator**
+- 📄 **AI-Powered Resume & Cover Letter Generator and resume analyzer**
 - 🧠 **Mock Interview Preparation** based on skills and experience
 - 📊 **Progress Tracking Dashboard** for preparation insights
 
