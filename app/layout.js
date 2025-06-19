@@ -6,7 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { dark } from "@clerk/themes";
 import Footer from "@/components/footer";
 
-const inter = Inter({subsets:["latin"]});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "NextStep-AI",
@@ -15,27 +15,31 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <ClerkProvider appearance={{baseTheme:dark}}>
-
+    <ClerkProvider
+      appearance={{
+        baseTheme: dark,
+        layout: {
+          unsafe_disableDevelopmentModeWarnings: true,
+        },
+      }}
+    >
       <html lang="en" suppressHydrationWarning>
-        <body
-          className={`${inter.className}`}
-          >
+        <body className={`${inter.className}`}>
           <ThemeProvider
-              attribute="class"
-              defaultTheme="dark"
-              enableSystem
-              disableTransitionOnChange
-              >
-              {/* header  */}
-              <Header/>
+            attribute="class"
+            defaultTheme="dark"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {/* header  */}
+            <Header />
 
-              <main className="min-h-screen">{children}</main>
+            <main className="min-h-screen">{children}</main>
 
-              {/* footer  */}
-              
-              <Footer/>
-            </ThemeProvider>
+            {/* footer  */}
+
+            <Footer />
+          </ThemeProvider>
         </body>
       </html>
     </ClerkProvider>
