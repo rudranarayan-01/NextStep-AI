@@ -125,7 +125,7 @@ const Footer = () => {
               <Link
                 target="_blank"
                 className="text-blue-300"
-                href={"https://akash0101.pythonanywhere.com/"}
+                href={"https://rudranarayan.vercel.app"}
               >
                 Rudranarayan Sahu
               </Link>
