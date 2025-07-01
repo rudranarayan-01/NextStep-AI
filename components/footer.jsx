@@ -91,6 +91,7 @@ const Footer = () => {
             <Link
               href="https://ai-interview-01.vercel.app"
               aria-label="Webite"
+              target="_blank"
               className="hover:text-gray-400 transition"
             >
               <Rss className="h-5 w-5" />
