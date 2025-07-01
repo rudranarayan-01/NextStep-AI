@@ -89,7 +89,7 @@ const Footer = () => {
           <h3 className="text-lg font-semibold mb-4">Follow Us</h3>
           <div className="flex space-x-4">
             <Link
-              href="https://ai-inter.netlify.app/"
+              href="https://ai-interview-01.vercel.app"
               aria-label="Webite"
               className="hover:text-gray-400 transition"
             >
